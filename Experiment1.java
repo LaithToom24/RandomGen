@@ -11,7 +11,7 @@ class Experiment1{
     System.out.print("Please enter a word: ");
     String userString = scan.nextLine();
     
-    String fileName = "resultsFor_"+userString+".txt");
+    String fileName = "resultsFor_"+userString+".txt";
     try {
       File dataFile = new File(fileName);
       dataFile.createNewFile();
@@ -47,7 +47,7 @@ class Experiment1{
       System.out.print("It's been "+wordCount+" words and we still haven't generated your word! All we have is "+generatedStr+". ;-;\n");
     
     try{
-      FileWriter writer = new FileWriter(fileName, true);
+      FileWriter writer = new FileWriter("output.txt", true);
       writer.write(0+","+wordCount);
       writer.close();
     } catch (IOException e){
@@ -80,7 +80,7 @@ class Experiment1{
     System.out.print("\""+generatedStr+"\" was generated in "+letterCount+" letters, which is roughly equivalent to "+letterCount/generatedStr.length()+" words. :)\n");
     
     try{
-      FileWriter writer = new FileWriter(fileName, true);
+      FileWriter writer = new FileWriter("output.txt", true);
       writer.write(0+","+letterCount);
       writer.close();
     } catch (IOException e){
